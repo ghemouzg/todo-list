@@ -1,2 +1,2 @@
-# todo-list
+# counter-app
 Created with CodeSandbox
