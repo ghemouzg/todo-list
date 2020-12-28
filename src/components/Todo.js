@@ -9,12 +9,8 @@ class Todo extends Component {
 
     return (
       <>
-        <label htmlFor="input">Todo</label>
-        <input type="text" id="input" />
-        <div>
-          <div>Items</div>
-          <ul>{todoListElements}</ul>
-        </div>
+        <div>Items</div>
+        <ul>{todoListElements}</ul>
       </>
     )
   }
