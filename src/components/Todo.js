@@ -1,16 +1,17 @@
 import React, { Component } from "react"
+import TodoItem from "./TodoItem"
 
 class Todo extends Component {
   render() {
     console.log(this.props.todoList)
     const todoListElements = this.props.todoList.map((todoItem, index) => (
-      <li key={index}>{todoItem}</li>
+      <TodoItem todoItem={todoItem} key={index} />
     ))
 
     return (
       <>
-        <div>Items</div>
-        <ul>{todoListElements}</ul>
+        <h3>Items</h3>
+        <ul className="list-group">{todoListElements}</ul>
       </>
     )
   }

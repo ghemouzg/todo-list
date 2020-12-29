@@ -15,7 +15,8 @@ class App extends Component {
       const newList = prevState.todoList.concat()
       newList.push(prevState.value)
       return {
-        todoList: newList
+        todoList: newList,
+        value: ""
       }
     })
   }
@@ -28,19 +29,23 @@ class App extends Component {
   }
 
   render() {
-    console.log("render")
-    console.log("value", this.state.value)
     return (
       <div className="container">
         <form onSubmit={this.addItem}>
-          <label htmlFor="input">Todo</label>
+          <label htmlFor="input">Todo: </label>
           <input
             type="text"
             id="input"
             onChange={this.changeValue}
             value={this.state.value}
+            className="m-3"
           />
-          <button onClick={this.addItem}>add item</button>
+          <button
+            onClick={this.addItem}
+            className="btn btn-primary btn-sm mx-2"
+          >
+            add item
+          </button>
         </form>
         <Todo todoList={this.state.todoList} />
       </div>
