@@ -24,6 +24,10 @@ class App extends Component {
   removeItem = (index) => {
     console.log("remove item here", "index:", index)
     console.log(this.state.todoList)
+    this.setState(prevState => {
+      const newList = prevState.todoList.filter((todoItem, itemIndex) => itemIndex !== index)
+      return { todoList: newList }
+    })
   }
 
   changeValue = (e) => {
