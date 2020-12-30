@@ -3,9 +3,12 @@ import TodoItem from "./TodoItem"
 
 class Todo extends Component {
   render() {
-    console.log(this.props.todoList)
     const todoListElements = this.props.todoList.map((todoItem, index) => (
-      <TodoItem todoItem={todoItem} key={index} />
+      <TodoItem
+        handleClick={() => this.props.handleClick(index)}
+        todoItem={todoItem}
+        key={index}
+      />
     ))
 
     return (

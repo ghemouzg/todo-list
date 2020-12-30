@@ -21,6 +21,11 @@ class App extends Component {
     })
   }
 
+  removeItem = (index) => {
+    console.log("remove item here", "index:", index)
+    console.log(this.state.todoList)
+  }
+
   changeValue = (e) => {
     const { value } = e.target
     this.setState({
@@ -47,7 +52,7 @@ class App extends Component {
             add item
           </button>
         </form>
-        <Todo todoList={this.state.todoList} />
+        <Todo handleClick={this.removeItem} todoList={this.state.todoList} />
       </div>
     )
   }
