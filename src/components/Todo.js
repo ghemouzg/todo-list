@@ -4,11 +4,7 @@ import TodoItem from "./TodoItem"
 class Todo extends Component {
   render() {
     const todoListElements = this.props.todoList.map((todoItem, index) => (
-      <TodoItem
-        handleClick={() => this.props.handleClick(index)}
-        todoItem={todoItem}
-        key={index}
-      />
+      <TodoItem todoItem={todoItem} key={index} />
     ))
 
     return (
